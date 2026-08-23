@@ -11,18 +11,21 @@
       "#낙상예방",
       "#정형외과",
       "#건강정보"
-    ]
+    ],
+    "imageMode": "bleed"
   },
   "cards": [
     {
       "type": "cover",
       "title": "뼈는 [소리 없이] 약해집니다",
-      "sub": "골다공증, 언제 검사하고 무엇을 조심할지"
+      "sub": "골다공증, 언제 검사하고 무엇을 조심할지",
+      "image": "photos/xray-explain.jpg"
     },
     {
       "type": "point",
       "title": "[엉덩방아] 한 번에 부러집니다",
-      "text": "가볍게 넘어졌을 뿐인데 손목이나 척추가 주저앉기도 합니다."
+      "text": "가볍게 넘어졌을 뿐인데 손목이나 척추가 주저앉기도 합니다.",
+      "image": "photos/back-standing.jpg"
     },
     {
       "type": "point",
@@ -47,18 +50,21 @@
     {
       "type": "point",
       "title": "칼슘만 [챙기는] 실수",
-      "text": "먹는 것만으로는 부족합니다. 뼈에 체중을 싣는 운동이 함께 가야 합니다."
+      "text": "먹는 것만으로는 부족합니다. 뼈에 체중을 싣는 운동이 함께 가야 합니다.",
+      "image": "photos/exercise-walk.jpg"
     },
     {
       "type": "point",
       "title": "[넘어지지] 않는 집부터",
-      "text": "욕실 미끄럼 방지, 밤에 켜두는 작은 불빛, 걸리는 문턱부터 정리합니다."
+      "text": "욕실 미끄럼 방지, 밤에 켜두는 작은 불빛, 걸리는 문턱부터 정리합니다.",
+      "image": "photos/walking-cane.jpg"
     },
     {
       "type": "cta",
       "title": "갑자기 [등이] 아프면",
       "text": "가벼운 충격 뒤 등허리가 아프거나 키가 줄면 전문의 상담이 필요합니다.",
-      "action": "저장해두기 →"
+      "action": "저장해두기 →",
+      "image": "photos/consult-couple.png"
     }
   ]
 }
