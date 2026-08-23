@@ -1,0 +1,106 @@
+[
+  {
+    "file": "photos/knee-stairs.jpg",
+    "use": "무릎 관절염, 계단 통증"
+  },
+  {
+    "file": "photos/knee-sitting.jpg",
+    "use": "무릎 통증, 관절염"
+  },
+  {
+    "file": "photos/knee-exam.jpg",
+    "use": "무릎 진찰, 진단"
+  },
+  {
+    "file": "photos/shoulder-reach.jpg",
+    "use": "오십견, 회전근개, 어깨 통증"
+  },
+  {
+    "file": "photos/shoulder-night.jpg",
+    "use": "야간 어깨 통증, 오십견"
+  },
+  {
+    "file": "photos/back-standing.jpg",
+    "use": "허리 통증, 요통"
+  },
+  {
+    "file": "photos/walking-rest.jpg",
+    "use": "척추관협착증, 간헐적 파행"
+  },
+  {
+    "file": "photos/walking-cane.jpg",
+    "use": "보행 장애, 협착증, 관절염"
+  },
+  {
+    "file": "photos/neck-desk.jpg",
+    "use": "목디스크, 거북목"
+  },
+  {
+    "file": "photos/neck-phone.jpg",
+    "use": "거북목, 일자목"
+  },
+  {
+    "file": "photos/wrist-brace.jpg",
+    "use": "손목 보조기, 손목터널증후군"
+  },
+  {
+    "file": "photos/hand-fingers.jpg",
+    "use": "방아쇠수지, 손가락 관절"
+  },
+  {
+    "file": "photos/elbow-lift.jpg",
+    "use": "테니스엘보, 팔꿈치 통증"
+  },
+  {
+    "file": "photos/heel-morning.jpg",
+    "use": "족저근막염, 아침 발뒤꿈치 통증"
+  },
+  {
+    "file": "photos/foot-shoe.jpg",
+    "use": "족저근막염, 신발, 깔창"
+  },
+  {
+    "file": "photos/ankle-hold.jpg",
+    "use": "발목 염좌, 만성 불안정증"
+  },
+  {
+    "file": "photos/exercise-band.jpg",
+    "use": "재활 운동, 근력 강화"
+  },
+  {
+    "file": "photos/exercise-walk.jpg",
+    "use": "걷기 운동, 예방, 마무리 카드"
+  },
+  {
+    "file": "photos/xray-explain.jpg",
+    "use": "검사 설명, 진단, 골다공증"
+  },
+  {
+    "file": "photos/back-bed.png",
+    "use": "허리 통증, 아침 기상 시 통증, 요통 커버"
+  },
+  {
+    "file": "photos/back-sofa.png",
+    "use": "허리 통증, 누워서 쉬는 장면, 진통제 복용"
+  },
+  {
+    "file": "photos/stretch-park.png",
+    "use": "스트레칭, 호전, 예방 운동, 야외 운동"
+  },
+  {
+    "file": "photos/leg-sitting.png",
+    "use": "다리 저림, 앉아서 허리·다리 짚기"
+  },
+  {
+    "file": "photos/syringe-tray.png",
+    "use": "주사 치료, 신경차단술, 스테로이드, 시술 기구"
+  },
+  {
+    "file": "photos/syringes-clock.png",
+    "use": "주사 횟수·간격 제한, 치료 주기"
+  },
+  {
+    "file": "photos/consult-couple.png",
+    "use": "진료 상담, 전문의 설명, 마무리 카드"
+  }
+]
