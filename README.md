@@ -41,7 +41,7 @@ node render-svg.mjs      # content.json → out/card-01.png ~ card-08.png
     { "type": "point", "title": "...", "text": "...", "image": "..." },
     { "type": "list",  "title": "...", "items": ["...", "..."] },
     { "type": "quote", "title": "...", "by": "..." },
-    { "type": "cta",   "title": "...", "text": "...", "action": "저장해두기 →" }
+    { "type": "cta",   "title": "...", "text": "..." }
   ]
 }
 ```

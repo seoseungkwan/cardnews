@@ -230,7 +230,6 @@ function card(c, i, total, meta) {
     push(textBlock(c.title, { w: 900, size: 74, lh: 1.28, ls: -0.04, color: fg, maxW, mark: true, markColor: markCol }));
     if (c.text) push(textBlock(c.text, { w: 400, size: 38, lh: 1.62, color: txtCol, maxW }), 36);
     if (!bleed) push(illusBlock(c.image, 400), 48);
-    if (c.action) push(ctaBlock(c.action), 52);
   } else {
     push(textBlock(String(i + 1).padStart(2, '0'), { w: 600, size: 30, lh: 1.2, ls: 0.08, color: accent, maxW }));
     push(textBlock(c.title, { w: 900, size: 74, lh: 1.28, ls: -0.04, color: fg, maxW, mark: true, markColor: markCol }), 30);
