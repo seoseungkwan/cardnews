@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- 허리를 펴고 양팔을 올려 스트레칭하는 사람 -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 어긋난 플랫 컬러 패치 -->
+    <path d="M272 138 L336 132 L344 258 L280 264 Z" fill="#F2C230"/>
+    <circle cx="296" cy="88" r="32" fill="#8A6A00" opacity=".8"/>
+    <path d="M232 60 L272 132 L258 142 L216 68 Z" fill="#F2C230" opacity=".7"/>
+    <path d="M382 66 L344 138 L358 148 L398 74 Z" fill="#F2C230" opacity=".7"/>
+
+    <!-- 머리 -->
+    <circle cx="304" cy="94" r="32" stroke="#0E1116" stroke-width="4"/>
+    <path d="M292 96 Q302 103 312 96" stroke="#0E1116" stroke-width="3"/>
+
+    <!-- 몸통 (곧게 편 허리) -->
+    <path d="M280 138 L280 258" stroke="#0E1116" stroke-width="5"/>
+    <path d="M330 138 L330 258" stroke="#0E1116" stroke-width="5"/>
+    <path d="M280 138 L330 138" stroke="#0E1116" stroke-width="5"/>
+    <path d="M280 258 L330 258" stroke="#0E1116" stroke-width="5"/>
+
+    <!-- 위로 뻗은 양팔 -->
+    <path d="M282 150 L246 96 L232 56" stroke="#0E1116" stroke-width="5"/>
+    <path d="M328 150 L364 96 L378 56" stroke="#0E1116" stroke-width="5"/>
+    <circle cx="228" cy="48" r="8" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+    <circle cx="382" cy="48" r="8" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+
+    <!-- 다리 -->
+    <path d="M292 258 L286 340" stroke="#0E1116" stroke-width="5"/>
+    <path d="M318 258 L324 340" stroke="#0E1116" stroke-width="5"/>
+    <path d="M270 344 L296 344 M312 344 L340 344" stroke="#0E1116" stroke-width="6"/>
+
+    <!-- 시원함 표시 (곡선) -->
+    <path d="M182 178 Q160 196 182 214" stroke="#8A6A00" stroke-width="4"/>
+    <path d="M154 168 Q124 196 154 224" stroke="#8A6A00" stroke-width="4" opacity=".7"/>
+    <path d="M428 178 Q450 196 428 214" stroke="#8A6A00" stroke-width="4"/>
+    <path d="M456 168 Q486 196 456 224" stroke="#8A6A00" stroke-width="4" opacity=".7"/>
+
+    <!-- 바닥선 -->
+    <path d="M212 356 L398 356" stroke="#0E1116" stroke-width="3" opacity=".55"/>
+
+    <!-- 장식 -->
+    <circle cx="112" cy="96" r="12" fill="#F2C230"/>
+    <circle cx="500" cy="118" r="9" stroke="#0E1116" stroke-width="3"/>
+    <rect x="482" y="290" width="16" height="16" fill="#8A6A00" opacity=".7"/>
+    <circle cx="128" cy="300" r="7" fill="#F2C230"/>
+  </g>
+</svg>

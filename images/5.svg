@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- 요추 측면 단면 + 경막외 접근 주사기 -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 어긋난 플랫 컬러 패치 -->
+    <rect x="150" y="72" width="92" height="46" rx="12" fill="#F2C230" opacity=".7"/>
+    <rect x="150" y="148" width="92" height="46" rx="12" fill="#F2C230" opacity=".7"/>
+    <rect x="150" y="224" width="92" height="46" rx="12" fill="#F2C230" opacity=".7"/>
+    <rect x="150" y="300" width="92" height="46" rx="12" fill="#F2C230" opacity=".7"/>
+
+    <!-- 척추체 (전방, 왼쪽) -->
+    <rect x="158" y="78" width="92" height="46" rx="12" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+    <rect x="158" y="154" width="92" height="46" rx="12" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+    <rect x="158" y="230" width="92" height="46" rx="12" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+    <rect x="158" y="306" width="92" height="46" rx="12" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+
+    <!-- 정상 추간판 -->
+    <rect x="164" y="126" width="80" height="26" rx="9" stroke="#0E1116" stroke-width="4" fill="#8A6A00" opacity=".55"/>
+    <rect x="164" y="278" width="80" height="26" rx="9" stroke="#0E1116" stroke-width="4" fill="#8A6A00" opacity=".55"/>
+
+    <!-- 탈출한 추간판 (후방으로 돌출) -->
+    <path d="M164 202 L244 202 Q286 210 286 215 Q286 220 244 228 L164 228 Z"
+          stroke="#0E1116" stroke-width="4" fill="#8A6A00" opacity=".8"/>
+
+    <!-- 극돌기 (후방, 오른쪽) -->
+    <path d="M250 86 L326 96 L326 112 L250 118 Z" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+    <path d="M250 162 L326 172 L326 188 L250 194 Z" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+    <path d="M250 238 L326 248 L326 264 L250 270 Z" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+    <path d="M250 314 L326 324 L326 340 L250 346 Z" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+
+    <!-- 경막외 공간 -->
+    <path d="M286 128 L286 306" stroke="#0E1116" stroke-width="3" stroke-dasharray="8 7" opacity=".65"/>
+
+    <!-- 눌리는 신경근 -->
+    <path d="M286 216 Q322 224 352 246" stroke="#8A6A00" stroke-width="5"/>
+    <path d="M352 246 Q366 254 380 250" stroke="#8A6A00" stroke-width="5"/>
+
+    <!-- 주사기 (후방에서 경막외 공간으로) -->
+    <g transform="translate(300 152) rotate(28)">
+      <path d="M0 12 L52 12" stroke="#0E1116" stroke-width="4"/>
+      <rect x="52" y="4" width="16" height="16" rx="2" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <rect x="68" y="-2" width="86" height="28" rx="4" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+      <rect x="154" y="2" width="22" height="20" rx="3" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <path d="M176 12 L192 12" stroke="#0E1116" stroke-width="5"/>
+      <path d="M92 -2 L92 26 M114 -2 L114 26 M136 -2 L136 26" stroke="#0E1116" stroke-width="2.5" opacity=".6"/>
+    </g>
+
+    <!-- 장식 -->
+    <circle cx="90" cy="120" r="12" fill="#F2C230"/>
+    <circle cx="96" cy="266" r="9" stroke="#0E1116" stroke-width="3"/>
+    <rect x="516" y="316" width="16" height="16" fill="#8A6A00" opacity=".7"/>
+    <path d="M470 92 Q494 74 516 92" stroke="#0E1116" stroke-width="3"/>
+  </g>
+</svg>

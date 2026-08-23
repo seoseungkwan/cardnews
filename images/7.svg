@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- 주사기 3개 + 시계 (2주 간격, 3회까지) -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 어긋난 플랫 컬러 패치 -->
+    <rect x="66" y="90" width="180" height="26" rx="4" fill="#F2C230" opacity=".7"/>
+    <rect x="66" y="182" width="180" height="26" rx="4" fill="#F2C230" opacity=".7"/>
+    <rect x="66" y="274" width="180" height="26" rx="4" fill="#F2C230" opacity=".7"/>
+    <circle cx="428" cy="192" r="76" fill="#8A6A00" opacity=".35"/>
+
+    <!-- 주사기 1 -->
+    <g transform="translate(72 84)">
+      <path d="M-24 14 L-4 14" stroke="#0E1116" stroke-width="5"/>
+      <rect x="-4" y="6" width="16" height="16" rx="2" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <rect x="12" y="0" width="140" height="28" rx="4" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+      <rect x="152" y="4" width="22" height="20" rx="3" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <path d="M174 14 L192 14" stroke="#0E1116" stroke-width="5"/>
+      <path d="M42 0 L42 28 M72 0 L72 28 M102 0 L102 28" stroke="#0E1116" stroke-width="2.5" opacity=".6"/>
+    </g>
+
+    <!-- 주사기 2 -->
+    <g transform="translate(72 176)">
+      <path d="M-24 14 L-4 14" stroke="#0E1116" stroke-width="5"/>
+      <rect x="-4" y="6" width="16" height="16" rx="2" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <rect x="12" y="0" width="140" height="28" rx="4" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+      <rect x="152" y="4" width="22" height="20" rx="3" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <path d="M174 14 L192 14" stroke="#0E1116" stroke-width="5"/>
+      <path d="M42 0 L42 28 M72 0 L72 28 M102 0 L102 28" stroke="#0E1116" stroke-width="2.5" opacity=".6"/>
+    </g>
+
+    <!-- 주사기 3 -->
+    <g transform="translate(72 268)">
+      <path d="M-24 14 L-4 14" stroke="#0E1116" stroke-width="5"/>
+      <rect x="-4" y="6" width="16" height="16" rx="2" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <rect x="12" y="0" width="140" height="28" rx="4" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+      <rect x="152" y="4" width="22" height="20" rx="3" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <path d="M174 14 L192 14" stroke="#0E1116" stroke-width="5"/>
+      <path d="M42 0 L42 28 M72 0 L72 28 M102 0 L102 28" stroke="#0E1116" stroke-width="2.5" opacity=".6"/>
+    </g>
+
+    <!-- 간격 표시 -->
+    <path d="M286 98 L286 190" stroke="#8A6A00" stroke-width="4" stroke-dasharray="9 8"/>
+    <path d="M286 190 L286 282" stroke="#8A6A00" stroke-width="4" stroke-dasharray="9 8"/>
+    <circle cx="286" cy="98" r="6" fill="#8A6A00"/>
+    <circle cx="286" cy="190" r="6" fill="#8A6A00"/>
+    <circle cx="286" cy="282" r="6" fill="#8A6A00"/>
+
+    <!-- 시계 (숫자 없음) -->
+    <circle cx="440" cy="200" r="76" stroke="#0E1116" stroke-width="5" fill="#E9EAEC"/>
+    <circle cx="440" cy="200" r="6" fill="#0E1116"/>
+    <path d="M440 200 L440 152" stroke="#0E1116" stroke-width="5"/>
+    <path d="M440 200 L482 216" stroke="#0E1116" stroke-width="5"/>
+    <path d="M440 132 L440 142 M508 200 L498 200 M440 268 L440 258 M372 200 L382 200"
+          stroke="#0E1116" stroke-width="4"/>
+
+    <!-- 장식 -->
+    <circle cx="546" cy="104" r="12" fill="#F2C230"/>
+    <circle cx="540" cy="300" r="9" stroke="#0E1116" stroke-width="3"/>
+    <rect x="342" y="316" width="16" height="16" fill="#8A6A00" opacity=".7"/>
+    <path d="M338 62 Q362 44 384 62" stroke="#0E1116" stroke-width="3"/>
+  </g>
+</svg>

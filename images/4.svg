@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- 허리에서 다리로 뻗치는 저림(방사통) + 허리로 들어가는 주사기 -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 어긋난 플랫 컬러 패치 -->
+    <rect x="190" y="76" width="96" height="68" rx="10" fill="#F2C230" opacity=".65"/>
+    <path d="M212 144 L252 144 L246 246 L206 246 Z" fill="#8A6A00" opacity=".4"/>
+    <path d="M208 246 L244 246 L240 332 L212 332 Z" fill="#8A6A00" opacity=".4"/>
+
+    <!-- 허리 위쪽 몸통 힌트 -->
+    <path d="M214 84 L214 44 M282 84 L282 44" stroke="#0E1116" stroke-width="5"/>
+
+    <!-- 골반 · 허리 -->
+    <rect x="200" y="84" width="96" height="68" rx="10" stroke="#0E1116" stroke-width="5" fill="#E9EAEC"/>
+    <path d="M200 112 L296 112" stroke="#0E1116" stroke-width="3" opacity=".45"/>
+
+    <!-- 허벅지 -->
+    <path d="M222 150 L262 150 L256 252 L216 252 Z" stroke="#0E1116" stroke-width="5" fill="#E9EAEC"/>
+    <!-- 종아리 -->
+    <path d="M218 252 L254 252 L250 338 L222 338 Z" stroke="#0E1116" stroke-width="5" fill="#E9EAEC"/>
+    <!-- 무릎 -->
+    <circle cx="236" cy="252" r="9" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+    <!-- 발 -->
+    <path d="M212 344 L282 344" stroke="#0E1116" stroke-width="8"/>
+
+    <!-- 다리를 타고 내려가는 저림 -->
+    <path d="M292 166 L318 188 L296 206 L322 228 L300 246 L326 268 L304 286 L330 308 L308 326 L332 346"
+          stroke="#F2C230" stroke-width="7"/>
+
+    <!-- 신경 경로 -->
+    <path d="M282 148 Q300 210 312 268 Q320 312 328 344"
+          stroke="#8A6A00" stroke-width="3" stroke-dasharray="9 8"/>
+
+    <!-- 허리로 들어가는 주사기 -->
+    <g transform="translate(300 34) rotate(38)">
+      <path d="M0 12 L44 12" stroke="#0E1116" stroke-width="4"/>
+      <rect x="44" y="4" width="16" height="16" rx="2" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <rect x="60" y="-2" width="94" height="28" rx="4" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+      <rect x="154" y="2" width="22" height="20" rx="3" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+      <path d="M176 12 L194 12" stroke="#0E1116" stroke-width="5"/>
+      <path d="M86 -2 L86 26 M110 -2 L110 26 M134 -2 L134 26" stroke="#0E1116" stroke-width="2.5" opacity=".6"/>
+    </g>
+
+    <!-- 바닥선 -->
+    <path d="M170 358 L330 358" stroke="#0E1116" stroke-width="3" opacity=".5"/>
+
+    <!-- 장식 -->
+    <circle cx="470" cy="132" r="12" fill="#F2C230"/>
+    <circle cx="516" cy="208" r="9" stroke="#0E1116" stroke-width="3"/>
+    <rect x="98" y="238" width="16" height="16" fill="#8A6A00" opacity=".7"/>
+    <circle cx="110" cy="312" r="7" fill="#F2C230"/>
+    <path d="M432 296 Q456 278 480 296" stroke="#0E1116" stroke-width="3"/>
+  </g>
+</svg>

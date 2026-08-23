@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- 의사와 환자의 상담 — 어두운 카드용(밝은 선화) -->
+  <g stroke="#E9EAEC" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 어긋난 플랫 컬러 패치 -->
+    <path d="M136 178 L204 172 L214 292 L146 298 Z" fill="#8A6A00" stroke="none"/>
+    <circle cx="164" cy="122" r="34" fill="#F2C230" opacity=".45" stroke="none"/>
+    <path d="M382 184 L446 178 L454 292 L390 298 Z" fill="#F2C230" opacity=".7" stroke="none"/>
+    <circle cx="410" cy="128" r="32" fill="#F2C230" opacity=".45" stroke="none"/>
+
+    <!-- 의사 -->
+    <circle cx="176" cy="126" r="34" stroke-width="4"/>
+    <path d="M156 128 Q166 135 176 128" stroke-width="3"/>
+    <path d="M148 184 Q176 168 206 184 L216 300 L142 300 Z" stroke-width="4"/>
+    <path d="M176 174 L176 300" stroke-width="3" opacity=".5"/>
+    <path d="M148 184 L176 216 L206 184" stroke-width="4"/>
+    <!-- 청진기 -->
+    <path d="M164 180 Q160 228 190 238 Q216 246 214 216" stroke="#F2C230" stroke-width="4"/>
+    <circle cx="214" cy="210" r="9" stroke-width="4" fill="#F2C230"/>
+    <!-- 설명하는 팔 -->
+    <path d="M212 210 L266 228" stroke-width="5"/>
+    <circle cx="274" cy="230" r="8" stroke-width="4" fill="#F2C230"/>
+
+    <!-- 환자 -->
+    <circle cx="422" cy="132" r="32" stroke-width="4"/>
+    <path d="M412 136 Q421 142 430 136" stroke-width="3"/>
+    <path d="M394 190 Q422 174 450 190 L458 300 L388 300 Z" stroke-width="4"/>
+    <!-- 듣는 팔 -->
+    <path d="M396 218 L348 234" stroke-width="5"/>
+    <circle cx="340" cy="236" r="8" stroke-width="4"/>
+
+    <!-- 의자 · 바닥 -->
+    <path d="M134 300 L134 346 M224 300 L224 346" stroke-width="4"/>
+    <path d="M382 300 L382 346 M464 300 L464 346" stroke-width="4"/>
+    <path d="M108 358 L490 358" stroke-width="3" opacity=".45"/>
+
+    <!-- 대화 표시 -->
+    <path d="M264 112 L338 112 L338 156 L312 156 L298 176 L296 156 L264 156 Z"
+          stroke-width="4" fill="#F2C230"/>
+    <path d="M282 126 L318 126 M282 142 L304 142" stroke="#0E1116" stroke-width="4"/>
+
+    <!-- 장식 -->
+    <circle cx="70" cy="112" r="12" fill="#F2C230" stroke="none"/>
+    <circle cx="532" cy="142" r="9" stroke-width="3"/>
+    <rect x="524" y="250" width="16" height="16" fill="#F2C230" opacity=".65" stroke="none"/>
+    <circle cx="76" cy="266" r="7" fill="#F2C230" stroke="none"/>
+  </g>
+</svg>

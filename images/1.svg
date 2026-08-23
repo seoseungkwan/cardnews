@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- 침대 끝에 앉아 허리를 짚은 사람 — 어두운 카드용(밝은 선화) -->
+  <g stroke="#E9EAEC" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 어긋난 플랫 컬러 패치 -->
+    <rect x="258" y="240" width="292" height="52" rx="8" fill="#F2C230" stroke="none"/>
+    <path d="M244 162 L284 158 L288 244 L248 248 Z" fill="#8A6A00" stroke="none"/>
+    <path d="M186 258 L252 250 L258 288 L192 296 Z" fill="#F2C230" opacity=".45" stroke="none"/>
+
+    <!-- 침대 -->
+    <rect x="268" y="250" width="292" height="52" rx="8" stroke-width="4"/>
+    <path d="M292 302 L292 356 M534 302 L534 356" stroke-width="4"/>
+    <path d="M268 270 L560 270" stroke-width="3" opacity=".45"/>
+    <path d="M150 360 L578 360" stroke-width="3" opacity=".4"/>
+
+    <!-- 몸통 -->
+    <path d="M250 170 Q244 212 252 252" stroke-width="5"/>
+    <path d="M290 170 Q300 212 292 252" stroke-width="5"/>
+    <path d="M250 170 L290 170" stroke-width="5"/>
+    <path d="M252 252 L292 252" stroke-width="5"/>
+
+    <!-- 머리 -->
+    <circle cx="262" cy="122" r="30" stroke-width="4"/>
+    <path d="M262 152 L266 170" stroke-width="4"/>
+    <path d="M240 124 Q248 130 256 124" stroke-width="3"/>
+
+    <!-- 다리 -->
+    <path d="M256 252 L196 264" stroke-width="5"/>
+    <path d="M196 264 L188 342" stroke-width="5"/>
+    <path d="M172 346 L202 346" stroke-width="6"/>
+
+    <!-- 허리를 짚은 팔 -->
+    <path d="M288 178 L320 214 L298 244" stroke-width="5"/>
+    <circle cx="295" cy="246" r="8" stroke-width="4" fill="#F2C230"/>
+
+    <!-- 통증 표시 -->
+    <path d="M320 250 Q336 242 350 250" stroke="#F2C230" stroke-width="4"/>
+    <path d="M328 270 Q346 262 362 272" stroke="#F2C230" stroke-width="4" opacity=".7"/>
+
+    <!-- 장식 -->
+    <circle cx="424" cy="118" r="12" fill="#F2C230" stroke="none"/>
+    <circle cx="470" cy="166" r="9" stroke-width="3"/>
+    <rect x="124" y="146" width="16" height="16" fill="#F2C230" opacity=".65" stroke="none"/>
+    <circle cx="132" cy="222" r="7" fill="#F2C230" stroke="none"/>
+    <path d="M492 226 Q516 208 540 226" stroke-width="3" opacity=".7"/>
+  </g>
+</svg>

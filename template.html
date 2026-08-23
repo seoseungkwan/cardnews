@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<style>
+:root{
+  --ink:#0E1116;
+  --paper:#E9EAEC;
+  --accent:#F2C230;                 /* 밝은 노랑 — 면·형광펜·어두운 카드 위 글자 */
+  --accent-deep:#8A6A00;            /* 진한 앰버 — 밝은 카드 위 글자 */
+  --muted:#7A8290;
+  --pad:88px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{
+  font-family:'Pretendard',sans-serif;
+  word-break:keep-all;              /* 한국어 단어 중간 줄바꿈 방지 */
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- 카드 골격 ---------- */
+.card{
+  width:1080px;height:1350px;padding:var(--pad);
+  display:flex;flex-direction:column;
+  background:var(--paper);color:var(--ink);
+}
+.card.dark{background:var(--ink);color:var(--paper)}
+.card.dark .sub{color:#8A93A3}
+
+/* ---------- 상단: 주제 라벨 + 진행 바 ---------- */
+.top{display:flex;align-items:center;gap:28px;height:22px;flex:none}
+.eyebrow{
+  font-size:22px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent-deep);white-space:nowrap;
+}
+.card.dark .eyebrow{color:var(--accent)}
+.progress{display:flex;gap:6px;flex:1}
+.progress i{flex:1;height:4px;border-radius:2px;background:currentColor;opacity:.15}
+.progress i.on{opacity:1;color:var(--accent-deep)}
+.card.dark .progress i.on{color:var(--accent)}
+
+/* ---------- 본문 ---------- */
+.body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:64px 0}
+.cover .body{justify-content:flex-end;padding-bottom:24px}
+
+h1{font-size:112px;font-weight:900;line-height:1.16;letter-spacing:-.045em}
+h2{font-size:74px;font-weight:900;line-height:1.28;letter-spacing:-.04em}
+.sub{font-size:40px;font-weight:500;line-height:1.5;color:var(--muted);margin-top:36px}
+.text{font-size:38px;font-weight:400;line-height:1.62;color:var(--muted);margin-top:36px}
+.card.dark .text{color:#9AA3B2}
+
+/* 시그니처: 형광펜 하이라이트 */
+mark{
+  background:linear-gradient(transparent 54%, rgba(242,194,48,.75) 54%);
+  color:inherit;padding:0 3px;
+}
+.dark mark{background:linear-gradient(transparent 54%, rgba(242,194,48,.88) 54%)}
+
+/* 일러스트 */
+.illus{
+  display:block;width:100%;max-height:400px;
+  object-fit:contain;object-position:left center;margin-top:48px;
+}
+.cover .illus{max-height:520px;margin:0 0 auto}
+
+/* 순번 */
+.index{
+  font-family:ui-monospace,'SFMono-Regular',Menlo,monospace;
+  font-size:30px;font-weight:600;color:var(--accent-deep);
+  letter-spacing:.08em;margin-bottom:30px;
+}
+
+/* 인용 */
+p.quote{font-size:62px;font-weight:700;line-height:1.42;letter-spacing:-.03em}
+p.quote::before{
+  content:'“';display:block;font-size:140px;line-height:.7;
+  color:var(--accent);margin-bottom:20px;
+}
+.by{font-size:32px;font-weight:500;color:var(--muted);margin-top:44px}
+
+/* 리스트 */
+ul{list-style:none;margin-top:48px}
+li{
+  font-size:44px;font-weight:600;line-height:1.4;
+  padding:30px 0 30px 54px;position:relative;
+  border-top:1px solid rgba(122,130,144,.28);
+}
+li:last-child{border-bottom:1px solid rgba(122,130,144,.28)}
+li::before{
+  content:'';position:absolute;left:0;top:44px;
+  width:22px;height:3px;background:var(--accent-deep);
+}
+
+/* CTA */
+.cta-line{
+  display:inline-block;margin-top:52px;padding:26px 44px;
+  border-radius:999px;background:var(--accent);color:var(--ink);
+  font-size:36px;font-weight:700;
+}
+
+</style>
+</head>
+<body>
+<div class="card" id="root"></div>
+
+<script>
+const esc = s => (s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+// 원고에서 [강조] 표기를 형광펜으로 변환
+const hl = s => esc(s).replace(/\[(.+?)\]/g, '<mark>$1</mark>');
+
+window.render = (c, i, total, meta = {}) => {
+  const el = document.getElementById('root');
+  const dark = c.type === 'cover' || c.type === 'quote' || c.type === 'cta';
+  el.className = 'card ' + (c.type || 'point') + (dark ? ' dark' : '');
+
+  const bars = Array.from({length: total},
+    (_, n) => `<i class="${n <= i ? 'on' : ''}"></i>`).join('');
+
+  const illus = c.image ? `<img class="illus" src="${esc(c.image)}">` : '';
+
+  let inner = '';
+  if (c.type === 'cover') {
+    inner = illus + `<h1>${hl(c.title)}</h1>` + (c.sub ? `<p class="sub">${hl(c.sub)}</p>` : '');
+  } else if (c.type === 'quote') {
+    inner = `<p class="quote">${hl(c.title)}</p>` + (c.by ? `<p class="by">— ${esc(c.by)}</p>` : '');
+  } else if (c.type === 'list') {
+    inner = `<h2>${hl(c.title)}</h2><ul>` +
+      (c.items || []).map(t => `<li>${hl(t)}</li>`).join('') + `</ul>`;
+  } else if (c.type === 'cta') {
+    inner = `<h2>${hl(c.title)}</h2>` +
+      (c.text ? `<p class="text">${hl(c.text)}</p>` : '') + illus +
+      (c.action ? `<div><span class="cta-line">${esc(c.action)}</span></div>` : '');
+  } else {
+    inner = `<div class="index">${String(i + 1).padStart(2, '0')}</div>` +
+      `<h2>${hl(c.title)}</h2>` + (c.text ? `<p class="text">${hl(c.text)}</p>` : '') + illus;
+  }
+
+  el.innerHTML = `
+    <div class="top">
+      <span class="eyebrow">${esc(meta.label || '')}</span>
+      <div class="progress">${bars}</div>
+    </div>
+    <div class="body">${inner}</div>`;
+};
+
+// 텍스트가 카드 밖으로 넘쳤는지 검사
+window.overflow = () => {
+  const b = document.querySelector('.body');
+  return b.scrollHeight > b.clientHeight + 2;
+};
+</script>
+</body>
+</html>

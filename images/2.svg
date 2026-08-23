@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- 소파에 누워 허리를 잡은 사람 + 약통 -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- 어긋난 플랫 컬러 패치 -->
+    <rect x="122" y="248" width="356" height="52" rx="12" fill="#F2C230"/>
+    <rect x="108" y="196" width="52" height="106" rx="14" fill="#8A6A00" opacity=".8"/>
+    <path d="M212 214 L332 208 L336 250 L216 256 Z" fill="#E9EAEC"/>
+    <circle cx="196" cy="212" r="26" fill="#F2C230"/>
+
+    <!-- 소파 -->
+    <rect x="130" y="256" width="356" height="52" rx="12" stroke="#0E1116" stroke-width="4"/>
+    <rect x="100" y="204" width="52" height="106" rx="14" stroke="#0E1116" stroke-width="4"/>
+    <path d="M160 310 L160 348 M462 310 L462 348" stroke="#0E1116" stroke-width="4"/>
+
+    <!-- 누운 몸통 -->
+    <path d="M224 254 Q262 220 330 224 L392 232" stroke="#0E1116" stroke-width="5"/>
+    <path d="M228 218 Q268 190 336 196 L390 204" stroke="#0E1116" stroke-width="5"/>
+    <path d="M390 204 L392 232" stroke="#0E1116" stroke-width="5"/>
+
+    <!-- 굽힌 다리 -->
+    <path d="M392 218 L438 190 L466 226" stroke="#0E1116" stroke-width="5"/>
+    <path d="M466 226 L488 220" stroke="#0E1116" stroke-width="6"/>
+
+    <!-- 머리 -->
+    <circle cx="204" cy="220" r="26" stroke="#0E1116" stroke-width="4"/>
+    <path d="M194 224 Q202 230 210 224" stroke="#0E1116" stroke-width="3"/>
+
+    <!-- 허리를 잡은 팔 -->
+    <path d="M256 236 L292 264 L326 246" stroke="#0E1116" stroke-width="5"/>
+    <circle cx="330" cy="244" r="8" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+
+    <!-- 통증 표시 -->
+    <path d="M318 176 Q334 164 348 176" stroke="#8A6A00" stroke-width="4"/>
+    <path d="M300 164 Q318 148 336 162" stroke="#8A6A00" stroke-width="4"/>
+
+    <!-- 약통 -->
+    <rect x="512" y="286" width="46" height="60" rx="6" stroke="#0E1116" stroke-width="4" fill="#E9EAEC"/>
+    <rect x="506" y="272" width="58" height="18" rx="5" stroke="#0E1116" stroke-width="4" fill="#F2C230"/>
+    <path d="M524 312 L546 312" stroke="#8A6A00" stroke-width="4"/>
+    <circle cx="492" cy="342" r="7" fill="#F2C230" stroke="#0E1116" stroke-width="3"/>
+
+    <!-- 장식 -->
+    <circle cx="86" cy="132" r="11" fill="#F2C230"/>
+    <circle cx="440" cy="108" r="9" stroke="#0E1116" stroke-width="3"/>
+    <rect x="524" y="150" width="15" height="15" fill="#8A6A00" opacity=".7"/>
+  </g>
+</svg>
