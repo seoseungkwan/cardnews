@@ -53,8 +53,11 @@ fs.mkdirSync(OUT, { recursive: true });
 const frameDir = path.join(OUT, 'frames');
 fs.mkdirSync(frameDir);
 
+const warn = [];
 const scenes = cards.map((c, i) => {
-  const svg = card(c, i, cards.length, meta, geom);
+  const report = {};
+  const svg = card(c, i, cards.length, meta, geom, report);
+  if (report.overflow > 0) warn.push(`${i + 1}장면: 본문이 ${Math.round(report.overflow)}px 넘친다`);
   const png = new Resvg(svg, {
     fitTo: { mode: 'width', value: geom.W * SCALE },
     font: { fontFiles, loadSystemFonts: false }
@@ -146,6 +149,11 @@ if (meta.caption || meta.hashtags) {
   fs.writeFileSync(path.join(OUT, 'caption.txt'),
     [meta.caption ?? '', '', (meta.hashtags ?? []).join(' ')].join('\n').trim());
   console.log('✓', path.join(OUT, 'caption.txt'));
+}
+
+if (warn.length) {
+  console.log('\n⚠ 안전영역 넘침 — 인스타 UI 에 가리거나 잘린다. 글자를 줄이고 다시 렌더할 것');
+  for (const w of warn) console.log('  ', w);
 }
 
 const mb = (fs.statSync(mp4).size / 1024 / 1024).toFixed(1);

@@ -214,7 +214,8 @@ function listBlock(items, maxW, fg, accent) {
 }
 
 // ---------- 카드 한 장 ----------
-export function card(c, i, total, meta, geom = SIZES.card) {
+// report 를 넘기면 본문이 놓인 범위와 넘침(px)을 채워 준다. 렌더러가 경고로 쓴다.
+export function card(c, i, total, meta, geom = SIZES.card, report = null) {
   const { W, H, PAD, BAND, safeTop, safeBottom } = geom;
   const dark = c.type === 'cover' || c.type === 'quote' || c.type === 'cta';
   const bg = dark ? INK : PAPER;
@@ -289,8 +290,18 @@ export function card(c, i, total, meta, geom = SIZES.card) {
       ? top + (bottom - top - totalH) / 2        // 사진 밴드 아래 영역의 세로 중앙
       : top + 64 + (bottom - 64 - (top + 64) - totalH) / 2;
 
+  const startY = y;
   if (coverIllus) s += coverIllus.draw(PAD, top + 64);
   for (const { b, mt } of blocks) { y += mt; s += b.draw(PAD, y); y += b.height; }
+
+  if (report) {
+    // 위로는 사진 밴드/상단 바, 아래로는 안전영역을 넘으면 잘리거나 UI 에 가린다
+    const ceiling = coverIllus ? top + 64 + coverIllus.height : top;
+    report.top = startY;
+    report.bottom = y;
+    report.limit = bottom;
+    report.overflow = Math.max(0, y - bottom) + Math.max(0, ceiling - startY);
+  }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s}</svg>`;
 }

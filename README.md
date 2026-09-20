@@ -1,24 +1,29 @@
-# 카드뉴스 생성기
+# 릴스·카드뉴스 생성기
 
-1차의료기관(의원급) 인스타그램 카드뉴스 8장을 만든다.
-같은 원고로 릴스용 세로 동영상(MP4)도 뽑는다.
+1차의료기관(의원급) 인스타그램 콘텐츠를 원고 하나(`content.json`)로 만든다.
+**기본 산출물은 릴스용 세로 동영상(MP4)** 이고, 같은 원고로 카드뉴스 8장도 뽑는다.
 브라우저 없이 만들기 때문에 클라우드 샌드박스에서도 돈다.
 
 ## 빠른 실행
 
 ```bash
 npm install
-node render-svg.mjs      # content.json → out/card-01.png ~ card-08.png (캐러셀)
-node render-reel.mjs     # content.json → out_reel/reel.mp4 (릴스)
+node render-reel.mjs     # content.json → out_reel/reel.mp4 (기본)
+node render-svg.mjs      # content.json → out/card-01.png ~ card-08.png (요청 시)
 ```
 
-`out/` 에 2160×2700 PNG 8장과 `out/caption.txt` 가 생긴다.
 `out_reel/` 에 1080×1920 MP4, 썸네일 `cover.jpg`, `caption.txt` 가 생긴다.
+`out/` 에 2160×2700 PNG 8장과 `out/caption.txt` 가 생긴다.
+
+두 렌더러 모두 본문이 안전영역을 넘으면 **넘침 경고**를 찍는다. 경고가 0건이 될 때까지
+글자를 줄이고 다시 렌더한다.
 
 ## 구조
 
 | 파일 | 역할 |
 |---|---|
+| `CLAUDE.md` | 이 저장소의 기본값. 산출물은 영상 |
+| `reel.md` / `cardnews.md` | 주제를 받아 한 편을 만드는 작업 흐름 |
 | `content.json` | 원고. 이것만 바꾸면 새 카드뉴스가 된다 |
 | `card-svg.mjs` | **카드 조판 엔진.** opentype.js 로 글자폭을 계산해 SVG 를 조립한다. 캔버스 비율을 인자로 받아 4:5 와 9:16 이 같은 코드를 쓴다 |
 | `render-svg.mjs` | 캐러셀 렌더러. 1080×1350 을 2배로 resvg 래스터화 |

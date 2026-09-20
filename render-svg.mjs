@@ -14,8 +14,11 @@ const cards = doc.cards ?? doc;
 fs.rmSync('out', { recursive: true, force: true });
 fs.mkdirSync('out', { recursive: true });
 
+const warn = [];
 cards.forEach((c, i) => {
-  const svg = card(c, i, cards.length, meta, geom);
+  const report = {};
+  const svg = card(c, i, cards.length, meta, geom, report);
+  if (report.overflow > 0) warn.push(`${i + 1}장: 본문이 ${Math.round(report.overflow)}px 넘친다`);
   const png = new Resvg(svg, {
     fitTo: { mode: 'width', value: geom.W * SCALE },
     font: { fontFiles, loadSystemFonts: false }
@@ -31,3 +34,7 @@ if (meta.caption || meta.hashtags) {
   console.log('✓ out/caption.txt');
 }
 console.log(`\n${cards.length}장 생성 완료 (브라우저 없이)`);
+if (warn.length) {
+  console.log('\n⚠ 넘침 — 해당 카드 글자를 줄이고 다시 렌더할 것');
+  for (const w of warn) console.log('  ', w);
+}
