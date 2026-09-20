@@ -39,7 +39,14 @@ const POOL = [
 const OUT = 'photos';
 fs.mkdirSync(OUT, { recursive: true });
 
-for (const p of POOL) {
+// 인자로 이름을 주면 그것만 생성한다. 없으면 풀에서 빠진 것을 전부 채운다.
+//   node make-pool.mjs knee-kneeling knee-swelling
+const only = process.argv.slice(2);
+const targets = only.length ? POOL.filter(p => only.includes(p.name)) : POOL;
+const unknown = only.filter(n => !POOL.some(p => p.name === n));
+if (unknown.length) { console.error('POOL 에 없는 이름:', unknown.join(', ')); process.exit(2); }
+
+for (const p of targets) {
   const dest = `${OUT}/${p.name}.jpg`;
   if (fs.existsSync(dest)) { console.log('건너뜀', dest); continue; }
   try {
