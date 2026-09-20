@@ -1,23 +1,28 @@
 # 카드뉴스 생성기
 
 1차의료기관(의원급) 인스타그램 카드뉴스 8장을 만든다.
-브라우저 없이 PNG 를 만들기 때문에 클라우드 샌드박스에서도 돈다.
+같은 원고로 릴스용 세로 동영상(MP4)도 뽑는다.
+브라우저 없이 만들기 때문에 클라우드 샌드박스에서도 돈다.
 
 ## 빠른 실행
 
 ```bash
 npm install
-node render-svg.mjs      # content.json → out/card-01.png ~ card-08.png
+node render-svg.mjs      # content.json → out/card-01.png ~ card-08.png (캐러셀)
+node render-reel.mjs     # content.json → out_reel/reel.mp4 (릴스)
 ```
 
 `out/` 에 2160×2700 PNG 8장과 `out/caption.txt` 가 생긴다.
+`out_reel/` 에 1080×1920 MP4, 썸네일 `cover.jpg`, `caption.txt` 가 생긴다.
 
 ## 구조
 
 | 파일 | 역할 |
 |---|---|
 | `content.json` | 원고. 이것만 바꾸면 새 카드뉴스가 된다 |
-| `render-svg.mjs` | **메인 렌더러.** opentype.js 로 글자폭을 계산해 SVG 를 조립하고 resvg 로 PNG 화 |
+| `card-svg.mjs` | **카드 조판 엔진.** opentype.js 로 글자폭을 계산해 SVG 를 조립한다. 캔버스 비율을 인자로 받아 4:5 와 9:16 이 같은 코드를 쓴다 |
+| `render-svg.mjs` | 캐러셀 렌더러. 1080×1350 을 2배로 resvg 래스터화 |
+| `render-reel.mjs` | **릴스 렌더러.** 9:16 장면을 뽑아 켄번스 줌 + 슬라이드 전환으로 MP4 인코딩 |
 | `template.html` | 구버전(크롬/playwright) 렌더용. `render.mjs` 와 한 쌍 |
 | `render.mjs` | 구버전 렌더러. playwright 필요. 클라우드에서는 못 쓴다 |
 | `compress.mjs` | 업로드용 축소 (1080×1350 JPEG) |
@@ -25,6 +30,37 @@ node render-svg.mjs      # content.json → out/card-01.png ~ card-08.png
 | `make-character.mjs` | 고정 캐릭터 시트 + 캐릭터 기반 일러스트 생성 |
 | `swap-img.mjs` / `use-photos.mjs` | content.json 의 이미지 경로 일괄 교체 |
 | `images/*.svg` | 손으로 그린 일러스트 (허리주사 편) |
+
+## 릴스 (`render-reel.mjs`)
+
+같은 `content.json` 을 9:16 으로 다시 조판한다. 카드를 레터박스로 욱여넣지 않고
+1080×1920 캔버스에 새로 앉히기 때문에 글자 크기와 여백이 그대로 살아 있다.
+
+```bash
+node render-reel.mjs                    # out_reel/reel.mp4
+node render-reel.mjs --audio bgm.m4a    # 배경음 깔기 (없으면 무음 트랙)
+node render-reel.mjs --style fade       # 전환 방식 (기본 slideleft)
+node render-reel.mjs --out out_reel2 --content other.json
+```
+
+| 옵션 | 기본값 | 설명 |
+|---|---|---|
+| `--content` | `content.json` | 원고 파일 |
+| `--out` | `out_reel` | 출력 폴더 |
+| `--fps` | `30` | 프레임레이트 |
+| `--transition` | `0.45` | 전환 길이(초) |
+| `--style` | `slideleft` | xfade 전환 종류. `fade` 는 앞뒤 카드 글자가 겹쳐 읽힌다 |
+| `--audio` | (없음) | 배경음 파일. 길이에 맞춰 반복·페이드된다 |
+
+- **장면 길이**는 글자 수에서 자동 계산한다 (약 15자/초 + 고정 2.2초, 2.8~5.2초 범위).
+  표지는 훅이라 0.5초 더 붙잡는다. 8장 기준 총 35~40초.
+- **안전 영역**: 상단 120px, 하단 360px 은 인스타 UI(캡션·버튼)가 덮으므로 비워 둔다.
+  `card-svg.mjs` 의 `SIZES.reel.safeTop / safeBottom` 에서 조정한다.
+- **움직임**: 장면마다 5% 느린 줌을 걸고 방향을 번갈아 준다. 전환은 슬라이드.
+- 무음이어도 AAC 트랙을 넣는다. 오디오가 없는 파일은 업로드에서 탈이 나는 경우가 있다.
+- `out_reel/cover.jpg` 는 릴스 커버로 지정할 첫 장면이다.
+
+ffmpeg 는 `ffmpeg-static` 패키지의 것을 쓴다. 시스템 설치가 필요 없다.
 
 ## content.json 형식
 

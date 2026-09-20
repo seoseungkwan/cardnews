@@ -4,6 +4,7 @@ node_modules/
 out/
 out_small/
 out_playwright/
+out_reel/
 
 # 테마 프리뷰 — 색상 후보 비교용으로만 뽑는다
 preview/
