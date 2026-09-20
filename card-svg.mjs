@@ -79,6 +79,8 @@ function textBlock(raw, { w, size, lh, color, ls = 0, maxW, mark = false, markCo
 
   return {
     height: lineH * lines.length,
+    lines,
+    isTitle: mark,   // 형광펜을 쓰는 블록은 제목뿐이다
     draw(x, y) {
       let out = '';
       lines.forEach((ln, i) => {
@@ -214,7 +216,12 @@ function listBlock(items, maxW, fg, accent) {
 }
 
 // ---------- 카드 한 장 ----------
-// report 를 넘기면 본문이 놓인 범위와 넘침(px)을 채워 준다. 렌더러가 경고로 쓴다.
+// 제목이 여러 줄로 넘어갈 때 마지막 줄에 한 어절만 남으면 어색하다 (README 규칙)
+const orphanTitle = b =>
+  b.isTitle && b.lines && b.lines.length > 1 &&
+  b.lines[b.lines.length - 1].text.trim().split(/\s+/).length === 1;
+
+// report 를 넘기면 본문이 놓인 범위와 넘침(px), 제목 줄바꿈 문제를 채워 준다.
 export function card(c, i, total, meta, geom = SIZES.card, report = null) {
   const { W, H, PAD, BAND, safeTop, safeBottom } = geom;
   const dark = c.type === 'cover' || c.type === 'quote' || c.type === 'cta';
@@ -301,6 +308,8 @@ export function card(c, i, total, meta, geom = SIZES.card, report = null) {
     report.bottom = y;
     report.limit = bottom;
     report.overflow = Math.max(0, y - bottom) + Math.max(0, ceiling - startY);
+    const orphan = blocks.find(x => orphanTitle(x.b));
+    report.orphan = orphan ? orphan.b.lines[orphan.b.lines.length - 1].text : null;
   }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">${s}</svg>`;

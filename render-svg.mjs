@@ -19,6 +19,7 @@ cards.forEach((c, i) => {
   const report = {};
   const svg = card(c, i, cards.length, meta, geom, report);
   if (report.overflow > 0) warn.push(`${i + 1}장: 본문이 ${Math.round(report.overflow)}px 넘친다`);
+  if (report.orphan) warn.push(`${i + 1}장: 제목 마지막 줄에 "${report.orphan}" 한 어절만 남는다`);
   const png = new Resvg(svg, {
     fitTo: { mode: 'width', value: geom.W * SCALE },
     font: { fontFiles, loadSystemFonts: false }
@@ -35,6 +36,6 @@ if (meta.caption || meta.hashtags) {
 }
 console.log(`\n${cards.length}장 생성 완료 (브라우저 없이)`);
 if (warn.length) {
-  console.log('\n⚠ 넘침 — 해당 카드 글자를 줄이고 다시 렌더할 것');
+  console.log('\n⚠ 손봐야 할 카드 — 글자를 줄이거나 어절을 조정하고 다시 렌더할 것');
   for (const w of warn) console.log('  ', w);
 }

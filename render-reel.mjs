@@ -58,6 +58,7 @@ const scenes = cards.map((c, i) => {
   const report = {};
   const svg = card(c, i, cards.length, meta, geom, report);
   if (report.overflow > 0) warn.push(`${i + 1}장면: 본문이 ${Math.round(report.overflow)}px 넘친다`);
+  if (report.orphan) warn.push(`${i + 1}장면: 제목 마지막 줄에 "${report.orphan}" 한 어절만 남는다`);
   const png = new Resvg(svg, {
     fitTo: { mode: 'width', value: geom.W * SCALE },
     font: { fontFiles, loadSystemFonts: false }
@@ -152,7 +153,7 @@ if (meta.caption || meta.hashtags) {
 }
 
 if (warn.length) {
-  console.log('\n⚠ 안전영역 넘침 — 인스타 UI 에 가리거나 잘린다. 글자를 줄이고 다시 렌더할 것');
+  console.log('\n⚠ 손봐야 할 장면 — 글자를 줄이거나 어절을 조정하고 다시 렌더할 것');
   for (const w of warn) console.log('  ', w);
 }
 
