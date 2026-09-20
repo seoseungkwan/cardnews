@@ -22,8 +22,9 @@ node render-svg.mjs      # content.json → out/card-01~08.png (요청 시에만
 ## 커밋 범위
 
 - `out_reel/` 과 `out/` 은 gitignore 다. **MP4 는 저장소에 커밋하지 않는다** (편당 6MB).
-- `decks/<날짜>-<슬러그>/` 에는 지금까지처럼 스틸 JPEG 만 남긴다.
-  영상이 다시 필요하면 원고로 재생성한다.
+- `decks/<날짜>-<슬러그>/` 에는 스틸 JPEG 만 남긴다. 영상이 다시 필요하면 원고로 재생성한다.
+  - 릴스: `scene-01.jpg` ~ `scene-08.jpg` (1080×1920, `out_reel/frames/` 를 축소)
+  - 카드뉴스: `card-01.jpg` ~ `card-08.jpg` (1080×1350, `compress.mjs`)
 
 ## 의료 표현 제약
 
