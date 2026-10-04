@@ -8,7 +8,7 @@
   "cards": [
     {
       "type": "cover",
-      "title": "[한 번 빠진 어깨] 다음을 막기",
+      "title": "[한 번 빠진 어깨] 다시 빠지기 전에",
       "sub": "맞춘 다음이 더 중요합니다",
       "image": "photos/shoulder-reach.jpg"
     },
@@ -25,7 +25,7 @@
     },
     {
       "type": "point",
-      "title": "[나이]에 따라 확인할 것이 다릅니다",
+      "title": "[나이]에 따라 볼 것이 다릅니다",
       "text": "젊은 층은 재발 쪽을, 중년 이후는 회전근개 손상 동반을 함께 봅니다.",
       "image": "photos/xray-explain.jpg"
     },
